@@ -15,8 +15,8 @@
 
     <modules>
         <module>third-framework</module>
-        <module>idv-test</module>
-        <module>art-of-concurrency</module>
+        <module>idv-lab</module>
+        <module>art_of_conc</module>
     </modules>
 
     <build>

@@ -1,8 +1,6 @@
 package chapter4.jobthreadpool;
 
 
-import javafx.concurrent.Worker;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
