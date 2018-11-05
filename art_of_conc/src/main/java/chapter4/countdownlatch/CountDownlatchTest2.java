@@ -52,10 +52,7 @@ public class CountDownlatchTest2 {
         final CountDownLatch startSignal = new CountDownLatch(1);
         long start = System.currentTimeMillis();
         for (int i = 0; i < threadNum; i++) {
-            new Thread(() -> {
-
-                countDownLatch.countDown();
-            }) {
+            new Thread(countDownLatch::countDown) {
             }.start();
         }
         startSignal.countDown();

@@ -122,7 +122,7 @@ public class DefaultJobThreadPool<Job extends Runnable> implements ThreadPool<Jo
             }
         }
 
-        public void shutdown() {
+        void shutdown() {
             running = false;
         }
     }
