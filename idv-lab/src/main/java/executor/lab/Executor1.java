@@ -30,6 +30,7 @@ public class Executor1 {
             });
         });
         threads.forEach(executorService::submit);
+        executorService.shutdown(); //关闭多线程
     }
 
     private static void bus(List<String> params) {
