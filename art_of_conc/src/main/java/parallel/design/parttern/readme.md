@@ -1,0 +1,1 @@
+java parallel design patterns such as future pattern, master-worker, guarded suspeionsion and so on
