@@ -23,10 +23,10 @@ public class VolatileTest {
     static class ChangeListener extends Thread {
         @Override
         public void run() {
-            int local_value = MY_INT;
+            int local_value = MY_INT;   //如果没有volatile的话，那么这里的local_value 就不会和全局变量MY_INT的数据保持一致了
             while (local_value < 5) {
                 if (local_value != MY_INT) {
-                    LOGGER.info("Got Change for MY_INT : {0}", MY_INT);
+                    LOGGER.info("Got Change for MY_INT : {}", MY_INT);
                     local_value = MY_INT;
                 }
             }
@@ -39,7 +39,7 @@ public class VolatileTest {
 
             int local_value = MY_INT;
             while (MY_INT < 5) {
-                LOGGER.info( "Incrementing MY_INT to {0}", local_value + 1);
+                LOGGER.info("Incrementing MY_INT to {}", local_value + 1);
                 MY_INT = ++local_value;
                 try {
                     Thread.sleep(500);
