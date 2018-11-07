@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @version 1.0.0 COPYRIGHT © 2001 - 2018 VOYAGE ONE GROUP INC. ALL RIGHTS RESERVED.
  * @Author jet.xie
- * @Description:
+ * @Description: 终止线程一般通过interrupt和一般的共享标识位来终止线程，stop函数被弃用了
  * @Date: Created at 9:33 2018/11/7.
  */
 public class ShutDown {
@@ -15,13 +15,14 @@ public class ShutDown {
         Thread thread_one = new Thread(one, "thread one");
         thread_one.start();
         TimeUnit.SECONDS.sleep(1);
-        thread_one.interrupt();
+        thread_one.interrupt();     //通过interrupt的方法来终止线程
 
         Runner two = new Runner();
         Thread thread_two = new Thread(two, "thread two");
         thread_two.start();
         TimeUnit.SECONDS.sleep(1);
-        two.cancel();
+        two.cancel();               //通过标志位来终止线程
+
     }
 
 
