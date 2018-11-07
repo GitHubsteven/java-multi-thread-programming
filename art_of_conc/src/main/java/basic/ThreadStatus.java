@@ -16,7 +16,7 @@ public class ThreadStatus {
         test_thread.start();
         SleepUtils.sencond(1);
         try {
-            test_thread.sleep(20 * 1000);
+            test_thread.sleep(20 * 1000);       //这样并不能修改中断线程
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
