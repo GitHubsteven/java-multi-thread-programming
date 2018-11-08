@@ -1,0 +1,70 @@
+package lock;
+
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+/**
+ * 打印ABC线程
+ *
+ * @Author dell
+ * @Create 2017-09-30 15:17
+ */
+public class PrintABCThread implements Runnable {
+    private ReentrantLock lock = new ReentrantLock();
+    private Condition condition = lock.newCondition();
+
+    int size = 3;
+    int group = 10;
+
+    int count = 0;
+
+    @Override
+    public void run() {
+        String name = Thread.currentThread().getName();
+        lock.lock();
+
+        try {
+
+            for (int i = 0; i < group; i++) {
+                if ("A".equals(name)) {
+                    if  (count % size != 0) {
+                        condition.await();
+                    }
+                } else if ("B".equals(name)) {
+                    if  (count % size != 1) {
+                        condition.await();
+                    }
+                } else {
+                    if  (count % size != 2) {
+                        condition.await();
+                    }
+                }
+
+                count++;
+                System.out.print(name);
+                condition.signalAll();// 通知正在等待的线程，此时有可能已经满足条件
+
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();// 记得要释放锁
+        }
+    }
+
+    public static void main(String[] args) {
+        PrintABCThread abcRunnable = new PrintABCThread();
+
+        Thread a = new Thread(abcRunnable);
+        a.setName("A");
+        a.start();
+
+        Thread b = new Thread(abcRunnable);
+        b.setName("B");
+        b.start();
+
+        Thread c = new Thread(abcRunnable);
+        c.setName("C");
+        c.start();
+    }
+}
