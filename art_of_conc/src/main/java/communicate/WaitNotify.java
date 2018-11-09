@@ -1,4 +1,4 @@
-package basic;
+package communicate;
 
 import util.SleepUtils;
 
@@ -8,7 +8,17 @@ import java.util.Date;
 /**
  * @version 1.0.0 COPYRIGHT © 2001 - 2018 VOYAGE ONE GROUP INC. ALL RIGHTS RESERVED.
  * @Author jet.xie
- * @Description:
+ * @Description: 线程通过wait/notify来通信，
+ * wait 范式：
+ * 1. 获取锁后
+ * 2. 不满足条件的话，那么就wait，被通知后继续检查条件
+ * 3. 满足的话就执行业务代码
+ *
+ * notify范式
+ * 1. 获取锁
+ * 2. 如果满足条件，执行逻辑代码
+ * 3. 修改判断条件
+ * 4. 通知所有的等待线程
  * @Date: Created at 19:41 2018/11/7.
  */
 public class WaitNotify {

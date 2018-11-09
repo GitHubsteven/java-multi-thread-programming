@@ -1,13 +1,12 @@
-package basic;
+package communicate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.event.Level;
 
 /**
  * @version 1.0.0 COPYRIGHT © 2001 - 2018 VOYAGE ONE GROUP INC. ALL RIGHTS RESERVED.
  * @Author jet.xie
- * @Description:
+ * @Description: 线程通过volatile来通信
  * @Date: Created at 16:16 2018/11/3.
  */
 public class VolatileTest {
