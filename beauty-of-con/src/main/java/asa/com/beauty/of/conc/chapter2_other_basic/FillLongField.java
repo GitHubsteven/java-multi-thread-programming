@@ -20,7 +20,7 @@ public class FillLongField {
     @Contended("tlr")
     int threadLocalRandomProbe;
     /**
-     * Secondary seed isolated from public ThreadLocalRandom sequence
+     * Secondary seed isolated from public ThreadLocalRandomTest sequence
      */
     @Contended("tlr")
     int threadLocalRandomSecondarySeed;
