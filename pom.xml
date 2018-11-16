@@ -17,6 +17,7 @@
         <module>third-framework</module>
         <module>idv-lab</module>
         <module>art_of_conc</module>
+        <module>beauty-of-con</module>
     </modules>
 
     <dependencyManagement>

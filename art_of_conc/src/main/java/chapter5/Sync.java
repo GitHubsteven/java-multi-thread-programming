@@ -39,4 +39,8 @@ public class Sync extends AbstractQueuedSynchronizer {
         return new ConditionObject();
     }
 
+    public final void aqcuire(int arg){
+    }
+
+
 }
