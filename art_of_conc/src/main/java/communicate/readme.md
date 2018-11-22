@@ -3,7 +3,7 @@
 1. volatile和上synchronized关键字
 2. wait/notify 通知机制
 3. 管道输入/输出流
-4. 线程之间的插入，join
+4. 线程之间的插入，join/countLatchDown/cycleBarrier/semaphore
 5. threadLocal的使用
 
 对于基于synchronized+ wait/notify而言，一个线程获取到锁有两个选择
