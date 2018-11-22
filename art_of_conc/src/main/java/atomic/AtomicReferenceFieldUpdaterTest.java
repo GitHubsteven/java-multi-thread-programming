@@ -1,10 +1,5 @@
 package atomic;
 
-import model.Developer;
-import model.Person;
-
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
 /**
  * @version 1.0.0 COPYRIGHT © 2001 - 2018 VOYAGE ONE GROUP INC. ALL RIGHTS RESERVED.
  * @Author jet.xie
