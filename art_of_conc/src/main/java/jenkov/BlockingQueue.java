@@ -12,8 +12,8 @@ import java.util.List;
  * @Description:
  * @version: 1.0.0
  */
-public class BlockingQueue {
-    private List queue = new LinkedList();
+public class BlockingQueue<T> {
+    private List<T> queue = new LinkedList<>();
     private int limit = 10;
 
     public BlockingQueue(int limit) {
@@ -21,7 +21,7 @@ public class BlockingQueue {
     }
 
 
-    public synchronized void enqueue(Object item)
+    public synchronized void enqueue(T item)
             throws InterruptedException {
         while (this.queue.size() == this.limit) {
             wait();

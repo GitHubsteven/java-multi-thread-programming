@@ -35,7 +35,7 @@ public class BoundedQueue<T> {
     private Condition notFull = lock.newCondition();
     private Condition notEmpty = lock.newCondition();
 
-    public BoundedQueue(int size) {
+    BoundedQueue(int size) {
         items = new Object[size];   //can not instantiated by generic.
     }
 
@@ -78,7 +78,7 @@ public class BoundedQueue<T> {
          */
             if (++removeIndex == items.length) removeIndex = 0;
             count--;
-            notFull.notify();
+            notFull.signal();
             //noinspection unchecked
             return (T) result;
         } finally {

@@ -1,4 +1,4 @@
-package chapter8_con_framework;
+package chapter6_con_framework;
 
 import java.util.Random;
 

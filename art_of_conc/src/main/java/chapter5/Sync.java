@@ -11,12 +11,13 @@ import java.util.concurrent.locks.Condition;
  */
 public class Sync extends AbstractQueuedSynchronizer {
     //是否处于占用状态
-    protected boolean isHeldExclusively() {
+    public boolean isHeldExclusively() {
         return getState() == 1;
     }
 
     //当状态为0的时候获取锁，这个acquires参数有啥用吗？
     public boolean tryAcquire(int acquires) {
+        assert acquires == 1;
         if (compareAndSetState(0, 1)) {
             setExclusiveOwnerThread(Thread.currentThread());
             return true;
@@ -26,6 +27,7 @@ public class Sync extends AbstractQueuedSynchronizer {
 
     //释放锁，将状态设置为0
     public boolean tryRelease(int releases) {
+        assert releases == 1;
         if (getState() == 0) throw new IllegalMonitorStateException(null);
         //释放线程
         setExclusiveOwnerThread(null);
@@ -35,11 +37,11 @@ public class Sync extends AbstractQueuedSynchronizer {
     }
 
     //返回一个condition，每个condition都含有一个condition队列
-    Condition newCondition() {
+    public Condition newCondition() {
         return new ConditionObject();
     }
 
-    public final void aqcuire(int arg){
+    public final void aqcuire(int arg) {
     }
 
 

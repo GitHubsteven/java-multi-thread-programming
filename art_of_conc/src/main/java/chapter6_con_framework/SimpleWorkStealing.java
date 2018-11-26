@@ -1,11 +1,10 @@
-package chapter8_con_framework;
+package chapter6_con_framework;
 
 import util.SleepUtils;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @version 1.0.0 COPYRIGHT © 2001 - 2018 VOYAGE ONE GROUP INC. ALL RIGHTS RESERVED.
