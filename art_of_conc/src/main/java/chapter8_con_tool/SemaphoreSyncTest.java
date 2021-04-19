@@ -15,7 +15,7 @@ public class SemaphoreSyncTest {
 
     public static void main(String[] args) {
         System.out.println(semaphore.availablePermits());
-        semaphore.release();
+        semaphore.release(2);
         System.out.println(semaphore.availablePermits());
     }
 }
