@@ -15,6 +15,11 @@ public class CreateThread {
     public static class Runner_1 implements Runnable {
         @Override
         public void run() {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("hello, runnable!");
         }
     }
@@ -26,6 +31,11 @@ public class CreateThread {
 
         @Override
         public void run() {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("hello, thread!");
         }
     }
@@ -33,6 +43,7 @@ public class CreateThread {
     public static class CallerTask implements Callable<String> {
         @Override
         public String call() throws Exception {
+            TimeUnit.SECONDS.sleep(1);
             return "hello, callable";
         }
     }
@@ -54,7 +65,10 @@ public class CreateThread {
 
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         Future<String> submit = executorService.submit(futureTask, "result");
+        Future<String> submit_dir = executorService.submit(new CallerTask());
         try {
+            System.out.println("=========");
+            System.out.println(submit_dir.get());
             System.out.println(submit.get());
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();

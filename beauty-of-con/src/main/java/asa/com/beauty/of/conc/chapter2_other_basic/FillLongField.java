@@ -1,6 +1,7 @@
 package asa.com.beauty.of.conc.chapter2_other_basic;
 
-import sun.misc.Contended;
+
+import asa.com.beauty.of.conc.chapter2_other_basic.annotation.Contended;
 
 /**
  * @version 1.0.0 COPYRIGHT © 2001 - 2018 VOYAGE ONE GROUP INC. ALL RIGHTS RESERVED.

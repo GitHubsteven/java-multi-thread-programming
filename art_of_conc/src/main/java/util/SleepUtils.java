@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @Date: Created at 11:00 2018/11/7.
  */
 public class SleepUtils {
+
     public static final void sencond(long seconds) {
         try {
             TimeUnit.SECONDS.sleep(seconds);

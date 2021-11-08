@@ -29,7 +29,7 @@ public class FutureInJdk {
         }
         //一旦future.get()，如果子线程没有结束的话，那么future thread那么就占用当前主线资源，导致当前主线程阻塞，
         // 主线程需要等待future子线程的完成才执行。
-        System.out.println("main thread want to end!");
+        System.out.println("main thread end!");
 
         executorService.shutdown();
     }
@@ -46,7 +46,7 @@ public class FutureInJdk {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 10; i++) {
                 sb.append(param);
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.SECONDS.sleep(2);
             }
             return sb.toString();
         }

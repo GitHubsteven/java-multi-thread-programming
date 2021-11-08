@@ -1,6 +1,5 @@
 package asa.com.beauty.of.conc.chapter2_other_basic;
 
-import com.sun.javaws.exceptions.ErrorCodeResponseException;
 import sun.misc.Unsafe;
 
 /**
